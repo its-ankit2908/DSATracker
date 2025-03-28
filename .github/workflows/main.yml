@@ -1,0 +1,29 @@
+name: setup java
+run-name: ${{ github.user }} | setup java
+
+on:
+  workflow_dispatch:
+  
+
+
+jobs:
+  SETUP_JAVA: 
+    name: setup java for os
+    strategy:
+      matrix:
+        os: ["ubuntu-latest","windows-latest"]
+        java: [8,11]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: setup java
+      uses: actions/setup-java@v3
+      with:
+        version: ${{ matrix.java }}
+
+    - name: check java version
+      run: |-
+        echo "java version"
+        java --version
+    
+      
+
