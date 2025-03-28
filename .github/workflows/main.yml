@@ -18,12 +18,15 @@ jobs:
     - name: setup java
       uses: actions/setup-java@v3
       with:
+        distribution: 'zulu'
         java-version: ${{ matrix.java }}
+        cache: 'maven'
 
     - name: check java version
       run: |-
         echo "java version"
         java --version
+        mvn --version
     
       
 
