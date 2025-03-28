@@ -1,5 +1,5 @@
 name: setup java
-run-name: ${{ github.user }} | setup java
+run-name: ${{ github.actor }} | setup java
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
     - name: setup java
       uses: actions/setup-java@v3
       with:
-        version: ${{ matrix.java }}
+        java-version: ${{ matrix.java }}
 
     - name: check java version
       run: |-
