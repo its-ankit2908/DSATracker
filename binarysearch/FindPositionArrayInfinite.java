@@ -1,4 +1,4 @@
-package revision.binarysearch;
+package binarysearch;
 
 public class FindPositionArrayInfinite {
     
